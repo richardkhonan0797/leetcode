@@ -26,23 +26,24 @@ Input: s = ""
 Output: 0
 """
 
-def lengthOfLongestSubstring(s: str) -> int:
-    cur_start = 0
-    exist = {}
-    cur_len = 0
-    longest = 0
+def lengthOfLongestSubstring(s: str) -> int:       
+    chars = {}
     
-    for i, letter in enumerate(s):
-        if letter in exist and exist[letter] >= cur_start:
-            cur_len = i - exist[letter]
-            cur_start = exist[letter] + 1
-            exist[letter] = i
+    longest = 0
+    cur_len = 0
+    cur_start = 0
+    
+    for i, char in enumerate(s):
+        if char in chars and chars[char] >= cur_start:
+            cur_len = i - chars[char]    
+            cur_start = chars[char] + 1
+            chars[char] = i
         else:
-            exist[letter] = i
+            chars[char] = i
             cur_len += 1
             if cur_len > longest:
                 longest = cur_len
-        
+                
     return longest
 
 print(lengthOfLongestSubstring(s="abcabcbb"))
