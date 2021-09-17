@@ -23,16 +23,16 @@ from typing import List
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         
-        max_len = 0
+        max_area = 0
         
         for row in range(len(grid)):
             for col in range(len(grid[row])):
-                cur_len = self.calcArea(grid, row, col)
+                cur_area = self.calcArea(grid, row, col)
 
-                if cur_len > max_len:
-                    max_len = cur_len
+                if cur_area > max_area:
+                    max_area = cur_area
 
-        return max_len
+        return max_area
 
     def calcArea(self, grid, row, col):
         if (
