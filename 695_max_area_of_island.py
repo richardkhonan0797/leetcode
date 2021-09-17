@@ -5,8 +5,6 @@ The area of an island is the number of cells with a value 1 in the island.
 
 Return the maximum area of an island in grid. If there is no island, return 0.
 
- 
-
 Example 1:
 
 
