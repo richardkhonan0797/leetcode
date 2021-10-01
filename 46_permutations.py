@@ -32,13 +32,8 @@ class Solution:
 
         if not nums:
             self.res.append(path)
-            print("nums: ", nums)
-            print("path: ", path)
-            print("res: ", self.res)
 
         for i in range(len(nums)):
-            print("nums: ", nums)
-            print("path: ", path)
             self.backtrack(nums[:i]+nums[i+1:], path+[nums[i]])
 
 solution = Solution()
