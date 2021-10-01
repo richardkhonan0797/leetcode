@@ -24,8 +24,6 @@ class Solution:
             elif char.isnumeric():
                 cleaned += char
                 
-        print(cleaned)
-        
         if len(cleaned) == 1: return True
         
         return self.check(cleaned, 0, len(cleaned) - 1)
