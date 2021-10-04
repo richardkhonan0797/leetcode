@@ -41,3 +41,7 @@ class Solution:
             ans.append(max(nums[i] + ans[i - 2], ans[i - 1]))
             
         return ans[-1]
+
+solution = Solution()
+
+print(solution.rob([2,7,9,3,1]))
