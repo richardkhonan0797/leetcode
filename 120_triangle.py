@@ -27,10 +27,24 @@ from typing import List
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         
-        dp = triangle[-1][:]
-        
-        for row in range(len(triangle) - 2, -1, -1):
-            for col in range(0, row + 1):
-                dp[col] = triangle[row][col] + min(dp[col], dp[col + 1])
+        dp = [0] * (len(triangle) + 1)
 
+        for row in triangle[::-1]:
+            for i, n in enumerate(row):
+                dp[i] = n + min(dp[i], dp[i + 1])
+        
         return dp[0]
+
+"""
+dp = [0, 0, 0, 0, 0]
+dp = [0, 0, 0, 0, 0]
+dp = [4, 1, 8, 3, 0]
+dp = [7, 6, 10, 3, 0]
+dp = [9, 10, 10, 3, 0]
+dp = [11, 10, 10, 3, 0]
+return 11
+"""
+
+solution = Solution()
+
+print(solution.minimumTotal(triangle=[[2],[3,4],[6,5,7],[4,1,8,3]]))
