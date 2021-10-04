@@ -1,9 +1,7 @@
 def prime(x):
-	counter = 0
-
 	candidate = 2
 
-	while counter != x:
+	while x != 0:
 
 		flag = True
 		
@@ -14,7 +12,7 @@ def prime(x):
 
 		if flag:
 			print(candidate)
-			counter += 1
+			x -= 1
 
 		candidate += 1
 
