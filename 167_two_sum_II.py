@@ -25,18 +25,18 @@ Output: [1,2]
 from typing import List
 
 
-def twoSum(numbers: List[int], target: int) -> List[int]:
-    
-    num_index = {}
-    
-    for i, num in enumerate(numbers):
-        value = target - num
+class Solution:
+def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
-        if value in num_index:
-            return [num_index[target - num], i + 1]
+    i = 0
+    j = len(numbers) - 1
         
-        num_index[num] = i + 1
-
-    return []
+    while i < j:
+        if numbers[i] + numbers[j] > target:
+            j -= 1
+        elif numbers[i] + numbers[j] < target:
+            i += 1
+        else:
+            return [i + 1, j + 1]
             
 print(twoSum(numbers=[2,7,11,15], target=9))
