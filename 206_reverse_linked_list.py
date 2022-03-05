@@ -27,15 +27,15 @@ class ListNode:
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         Iterative
+#         res = None
+#         while head:
+#             res = ListNode(val=head.val, next=res)
+#             head = head.next
+#         return res
         
-        prev = None
-        
-        while head:
-            curr = head
-            head = head.next
-            curr.next = prev
-            prev = curr
-            
-        return prev
-        
-        
+#         Recursive
+        if head:
+            self.res = ListNode(val=head.val, next=self.res)
+            self.reverseList(head.next)
+        return self.res
