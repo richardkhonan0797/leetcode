@@ -1,4 +1,4 @@
-"""
+/*
 Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
 Example 1:
@@ -11,7 +11,7 @@ Example 2:
 Input: s = "race a car"
 Output: false
 Explanation: "raceacar" is not a palindrome.
-"""
+*/
 
 function isPalindrome(s: string): boolean {
     if (s.length === 1) return true;
