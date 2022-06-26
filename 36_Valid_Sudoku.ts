@@ -14,6 +14,7 @@ function isValidSudoku(board: string[][]): boolean {
             }
         }
     }
+    
     return true;
 };
 
@@ -22,6 +23,7 @@ function checkRow(board: string[][], cursor: [number, number], target: string): 
         if (col === cursor[1]) continue;
         if (board[cursor[0]][col] === target) return false;
     }
+    
     return true
 };
              
@@ -30,6 +32,7 @@ function checkCol(board: string[][], cursor: [number, number], target: string): 
         if (row === cursor[0]) continue;
         if (board[row][cursor[1]] === target) return false;
     }   
+    
     return true
 };
              
@@ -43,5 +46,6 @@ function checkNine(board: string[][], cursor: [number, number], target: string):
             if (board[currRow + i][currCol + j] === target) return false;
         }
     }
+    
     return true
 };
