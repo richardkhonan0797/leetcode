@@ -20,7 +20,11 @@ function isPalindrome(s: string): boolean {
     
     for (let i = 0; i < s.length; i++) {
         let ascii = s.charCodeAt(i);
-        if (ascii >= 65 && ascii <= 90 || ascii >= 97 && ascii <= 122) {
+        if (
+            ascii >= 48 && ascii <= 57 ||
+            ascii >= 65 && ascii <= 90 || 
+            ascii >= 97 && ascii <= 122
+        ) {
             charsOnly += s[i].toLowerCase();
         }
     }
@@ -29,7 +33,7 @@ function isPalindrome(s: string): boolean {
     let j = charsOnly.length - 1;
     
     while (i < j) {
-        if (s[i] !== s[j]) return false;
+        if (charsOnly[i] !== charsOnly[j]) return false;
         i++;
         j--;
     }
