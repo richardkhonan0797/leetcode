@@ -1,6 +1,5 @@
 function longestCommonPrefix(strs: string[]): string {
     let res = "";
-    
     let minLength = findMinLength(strs);
     
     for (let i = 0; i < minLength; i++) {
