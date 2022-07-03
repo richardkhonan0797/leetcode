@@ -1,33 +1,29 @@
 function longestCommonPrefix(strs: string[]): string {
-    let res = strs[0];
+    let res = "";
     
-    for (let i = 1; i < strs.length; i++) {
-        let temp = "";
+    let minLength = findMinLength(strs);
+    
+    for (let i = 0; i < minLength; i++) {
+        let comp = strs[0][i];
         
-        if (res.length === 0) break;
-        
-        if (res.length < strs[i].length) {
-            for (let j = 0; j < res.length; j++) {
-                if (res[j] === strs[i][j]) {
-                    temp += res[j];   
-                } else {
-                    res = temp;
-                    break;
-                }
-            }
-            res = temp;
-        } else {
-            for (let j = 0; j < strs[i].length; j++) {
-                if (res[j] === strs[i][j]) {
-                    temp += res[j];
-                } else {
-                    res = temp;
-                    break;
-                }
-            }
-            res = temp;
+        for (let j = 0; j < strs.length; j++) {
+            if (strs[j][i] !== comp) return res;
         }
+        
+        res += strs[0][i];
     }
     
     return res;
+};
+    
+function findMinLength(strs: string[]): number {
+    let min = strs[0].length;
+    
+    for (let i = 1; i < strs.length; i++) {
+        if (strs[i].length < min) {
+            min = strs[i].length;
+        }
+    }
+    
+    return min;
 };
