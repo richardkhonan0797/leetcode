@@ -28,3 +28,7 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
     
     return dummy.next;
 };
+
+// head = [1,2,3,4,5], n = 2 => [1, 2, 3, 5]
+// head = [1], n = 1 => []
+// head = [1, 2], n = 1 => [1]
